@@ -15,18 +15,39 @@
   --focus-color: #2196f3;
   --button-color: #2196f3;
   --button-grey-color: #f5f4fa;
+  --border-line-color: #ececec;
 }
 
-/* Main text color */
+/* Global style */
 body {
   color: var(--primary-text-color);
-  background-color: var(--primary-background-color);
+  /* background-color: var(--primary-background-color); */
   font-family: Roboto, sans-serif;
 }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-bottom: 0;
+  margin-top: 0;
+}
 
-/* Hide list symbol */
-.list {
+ul {
   list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Container */
+.container {
+  width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 /* header */
@@ -35,7 +56,8 @@ body {
 }
 
 /* logo */
-.logo {
+.logo-header {
+  display: flex;
   text-decoration: none;
   color: var(--accent-color);
   font-family: Raleway;
@@ -44,17 +66,47 @@ body {
   line-height: 1.19;
   letter-spacing: 0.03em;
   cursor: default;
+  padding-top: 24px;
+  padding-bottom: 25px;
 }
 
-.logo-white {
-  color: var(--logo-color-white);
-}
-
-.logo-black {
+.logo-header .black {
   color: var(--logo-color-black);
 }
 
+.logo-footer {
+  display: flex;
+  text-decoration: none;
+  color: var(--accent-color);
+  font-family: Raleway;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 1.19;
+  letter-spacing: 0.03em;
+  cursor: default;
+  padding-top: 60px;
+  padding-bottom: 20px;
+}
+
+.logo-footer .white {
+  color: var(--logo-color-white);
+}
+
 /* Nav menu */
+.nav {
+  display: flex;
+  align-items: center;
+}
+
+.site-nav {
+  display: flex;
+  margin-left: 93px;
+}
+
+.site-nav > .item:not(:last-child) {
+  margin-right: 50px;
+}
+
 .site-nav a {
   color: var(--primary-text-color);
   text-decoration: none;
@@ -68,7 +120,23 @@ body {
   color: var(--focus-color);
 }
 
+/* main nav */
+.main-nav {
+  display: flex;
+  align-items: center;
+}
+
 /* Contact at the header */
+.header-contact {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+}
+
+.header-contact > .item:not(:last-child) {
+  margin-right: 50px;
+}
+
 .header-contact a {
   color: var(--text-color-grey);
   text-decoration: none;
@@ -82,9 +150,14 @@ body {
   color: var(--focus-color);
 }
 
+.header-line {
+  border-bottom: 1px solid var(--border-line-color);
+}
+
 /* Hero */
 .hero {
   background-color: var(--hero-background-color);
+  text-align: center;
 }
 
 .hero-title {
@@ -95,10 +168,19 @@ body {
   text-align: center;
   letter-spacing: 0.06em;
   text-transform: uppercase;
+  padding-top: 200px;
+  padding-bottom: 30px;
 }
 
 /* Button  */
 .button {
+  display: inline-block;
+  align-items: center;
+  min-width: 216px;
+  height: 50px;
+  border-radius: 4px;
+  padding: 10px 32px;
+  text-align: center;
   background-color: var(--button-color);
   color: var(--text-color-white);
   cursor: pointer;
@@ -107,19 +189,39 @@ body {
   font-size: 16px;
   line-height: 1.88em;
   letter-spacing: 0.06em;
+  margin-bottom: 200px;
+  border: none;
+}
+
+.section {
+  padding-bottom: 94px;
 }
 
 /* Section features*/
 
-.section {
-  background-color: var(--section-bg-color);
+.features-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -30px;
+  margin-top: -30px;
 }
+
+.features-list > .item {
+  width: calc((100% - 120px) / 4);
+  margin-left: 30px;
+  margin-top: 30px;
+}
+
+/* .features-list > .item:not(:nth-child(4n)) {
+  margin-right: 30px;
+} */
 
 .features-list p {
   color: var(--text-color-grey);
   font-size: 14px;
   line-height: 1.71;
   letter-spacing: 0.03em;
+  padding-top: 10px;
 }
 
 .features-list h3 {
@@ -134,11 +236,54 @@ body {
   font-size: 36px;
   line-height: 1.17;
   letter-spacing: 0.03em;
+  text-align: center;
+  padding-bottom: 50px;
 }
+/* Product */
+
+.product-flex {
+  display: flex;
+  padding-left: 0;
+  align-items: center;
+  margin-left: -30px;
+  margin-top: -30px;
+}
+
+.product-flex > .item {
+  display: flex;
+  width: calc((100% - 90px) / 3);
+  margin-left: 30px;
+  margin-top: 30px;
+}
+
+/* .product-flex > .item:not(:nth-child(3n)) {
+  margin-right: 30px;
+} */
 
 /* Section team */
 .team {
   background-color: var(--section-2bg-color);
+}
+
+.team-flex {
+  display: flex;
+  margin-left: -30px;
+  margin-top: -30px;
+}
+
+.team-flex > .item {
+  width: calc((100% - 120px) / 4);
+  background-color: var(--header-background-color);
+  margin-left: 30px;
+  margin-top: 30px;
+}
+
+/* .team-flex > .item:not(:nth-child(4n)) {
+  margin-right: 30px;
+} */
+
+.team-title {
+  padding-top: 94px;
 }
 
 .team h3 {
@@ -146,6 +291,9 @@ body {
   font-size: 16px;
   line-height: 1.19;
   letter-spacing: 0.03em;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  text-align: center;
 }
 
 .team p {
@@ -153,6 +301,8 @@ body {
   font-size: 16px;
   line-height: 1.19;
   letter-spacing: 0.03em;
+  margin-bottom: 30px;
+  text-align: center;
 }
 
 .footer {
@@ -172,20 +322,46 @@ body {
   letter-spacing: 0.03em;
 }
 
-.footer-contact p {
-  color: var(--text-color-white);
+.footer-contact .item:nth-child(2) {
+  padding-bottom: 60px;
 }
+
 .footer-contact a {
   color: var(--footer-rgba-color);
   text-decoration: none;
   cursor: default;
+  padding-top: 9px;
 }
 
+/* Portfolio */
+
 /* Section Projects */
+.projects {
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 50px;
+  margin-left: -20px;
+  margin-top: -20px;
+}
+
+.projects > .item {
+  width: calc((100% - 60px) / 3);
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+/* .projects .item:not(:nth-child(3n)) {
+  margin-right: 30px;
+} */
+
 .projects h2 {
   font-size: 18px;
   line-height: 2;
   letter-spacing: 0.06em;
+  padding-top: 20px;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-bottom: 4px;
 }
 
 .projects p {
@@ -193,6 +369,9 @@ body {
   font-size: 16px;
   line-height: 1.88;
   letter-spacing: 0.03em;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-bottom: 20px;
 }
 
 /* button at the portfolio */
@@ -204,10 +383,29 @@ body {
   font-size: 16px;
   line-height: 1.62;
   letter-spacing: 0.03em;
+  border-radius: 4px;
+  border: none;
+  text-align: center;
+  margin-top: 100px;
+  padding: 6px 22px;
 }
 
 .portfolio-button:hover,
 .portfolio-button:focus {
   background-color: var(--button-color);
   color: var(--text-color-white);
+}
+
+/* Portfolio filter */
+.hiden-title {
+  text-align: center;
+}
+
+.filter {
+  display: flex;
+  justify-content: center;
+}
+
+.filter > .item:not(:last-child) {
+  margin-right: 8px;
 }
