@@ -1,5 +1,5 @@
-# goit-markup-hw-02
+# goit-markup-hw-03
 
-Home work 02
+Home work 03
 
-https://vladyslav-rohalov.github.io/goit-markup-hw-02/
+https://vladyslav-rohalov.github.io/goit-markup-hw-03/
